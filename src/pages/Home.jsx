@@ -1,6 +1,10 @@
 import { Container, Heading, Section } from 'components';
+import { useFetchCountries } from '../hooks/useFetchCountries';
 
-export const Home = () => {
+
+const Home = () => {
+  const { countries, loading, error } = useFetchCountries() ;
+  console.log(countries);
   return (
     <Section>
       <Container>
@@ -9,3 +13,6 @@ export const Home = () => {
     </Section>
   );
 };
+
+
+export default Home;
